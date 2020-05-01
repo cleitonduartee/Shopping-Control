@@ -37,5 +37,27 @@ function formatValue(value){
     str = "R$ " + str;
     return str
 }
+function addData(){
+    var item = lerDados()
+    if(validar(item)){
+        list.unshift({"description":item.desc , "amount":item.amount , "value":item.value})
+        setList(list);
+    }else{
+        alert("Preencha todos os Campos!")
+    }
+}
+function lerDados(){
+    var item = {}
+    item.desc = document.getElementById("desc").value;
+    item.amount = document.getElementById("amount").value;
+    item.value = document.getElementById("value").value;
+    return item;
+}
+function validar(item){
+    if(item.desc && item.amount && item.value){
+        return true
+    }
+    return false
+}
 setList(list);
 console.log(getTotal(list))
