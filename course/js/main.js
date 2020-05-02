@@ -20,7 +20,7 @@ function setList(list){
         <td> ${formatDesc(list[key].description)}</td>
         <td>${list[key].amount}</td>
         <td>${formatValue(list[key].value)}</td>
-        <td><button onclick="setUpdate(${key})"class="btn btn-light">Edit</button> | Delete</td>                    
+        <td><button onclick="setUpdate(${key})"class="btn btn-light">Edit</button> <button onclick="deleteData(${key})"class="btn btn-light">Delete</button</td>                    
     </tr>`
     }
     table += '</tbody'
@@ -41,6 +41,7 @@ function addData(){
     var item = lerDados()
     if(validar(item)){
         list.unshift({"description":item.desc , "amount":item.amount , "value":item.value})
+        this.resetForm()
         setList(list);
     }else{
         alert("Preencha todos os Campos!")
@@ -68,6 +69,8 @@ function setUpdate(id){
 
     document.getElementById("btnUpdate").style.display = "inline-block";
     document.getElementById("btnAdd").style.display = "none";
+
+    document.getElementById("inputIDUpadate").innerHTML =  '<input id="idUpdate" type="hidden" value="'+id+'">'
 }
 function resetForm(){
     document.getElementById("desc").value = "";
@@ -76,6 +79,32 @@ function resetForm(){
 
     document.getElementById("btnUpdate").style.display = "none";
     document.getElementById("btnAdd").style.display = "inline-block";
+    document.getElementById("inputIDUpadate").innerHTML = "";
+}
+function updateData(){
+    var id = document.getElementById("idUpdate").value;
+
+    var item = this.lerDados();
+    list[id] = {"description": item.desc , "amount": item.amount, "value": item.value};
+    
+    this.resetForm();
+    this.setList(list);
+
+}
+function deleteData(id){
+    if(confirm('Tem certeza que deseja Deletar item ?')){
+        if(id === list.length -1){
+            list.pop() //remove o ultimo
+        }else if (id === '0'){
+            list.shift() //remove o primeiro
+        }else{
+           var arrAuxInit = list.slice(0,id);
+           var arrAuxEnd = list.slice(id + 1)
+            list = arrAuxInit.concat(arrAuxEnd);
+        }
+        setList(list)
+
+    }
 }
 
 setList(list);

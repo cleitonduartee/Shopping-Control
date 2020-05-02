@@ -1,0 +1,29 @@
+[33mcommit dddff03840a374873331d6c94035c5a81ed0427f[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: CleitonDuarte <djcleitonduarte@hotmail.com>
+Date:   Sat May 2 08:22:39 2020 -0400
+
+    Criando Button Edit e função de Save e Cancel
+
+[33mcommit 1ee123ee091c59054d54737c20c9dec7f9d7c133[m
+Author: CleitonDuarte <djcleitonduarte@hotmail.com>
+Date:   Fri May 1 17:17:23 2020 -0400
+
+    Criando formulario para inserir dados na lista
+
+[33mcommit 281c432e8251c60d331fe1bc9fdaef5f20b24343[m
+Author: CleitonDuarte <djcleitonduarte@hotmail.com>
+Date:   Fri May 1 16:50:21 2020 -0400
+
+    Criando Função para formatar Description e Value...
+
+[33mcommit 7e10169c22308990233106391a8ce9e92ff07ff8[m
+Author: CleitonDuarte <djcleitonduarte@hotmail.com>
+Date:   Fri May 1 16:24:34 2020 -0400
+
+    Criando função para inserir lista com os dados do arrya List...
+
+[33mcommit d17342205a46e72d3531410a3ec094492eb95be9[m
+Author: CleitonDuarte <djcleitonduarte@hotmail.com>
+Date:   Fri May 1 15:52:07 2020 -0400
+
+    Criando Função de Soma e NavBar no Html...
