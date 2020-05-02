@@ -20,7 +20,7 @@ function setList(list){
         <td> ${formatDesc(list[key].description)}</td>
         <td>${list[key].amount}</td>
         <td>${formatValue(list[key].value)}</td>
-        <td>Edit | Delete</td>                    
+        <td><button onclick="setUpdate(${key})"class="btn btn-light">Edit</button> | Delete</td>                    
     </tr>`
     }
     table += '</tbody'
@@ -59,5 +59,24 @@ function validar(item){
     }
     return false
 }
+function setUpdate(id){
+    
+    var obj = list[id];
+    document.getElementById("desc").value = obj.description;
+    document.getElementById("amount").value = obj.amount;
+    document.getElementById("value").value = obj.value;
+
+    document.getElementById("btnUpdate").style.display = "inline-block";
+    document.getElementById("btnAdd").style.display = "none";
+}
+function resetForm(){
+    document.getElementById("desc").value = "";
+    document.getElementById("amount").value = "";
+    document.getElementById("value").value = "" ;
+
+    document.getElementById("btnUpdate").style.display = "none";
+    document.getElementById("btnAdd").style.display = "inline-block";
+}
+
 setList(list);
 console.log(getTotal(list))
