@@ -10,7 +10,8 @@ function getTotal(list){
         //console.log(key)
        total += list[key].value * list[key].amount
     }
-    return total;
+    document.getElementById("totalValue").innerHTML = this.formatValue(total);
+    
 }
 function setList(list){
     
@@ -24,7 +25,8 @@ function setList(list){
     </tr>`
     }
     table += '</tbody'
-    document.getElementById("listTable").innerHTML = table
+    document.getElementById("listTable").innerHTML = table;
+    this.getTotal(list);
 }
 function formatDesc(desc){    
     var str = desc.toLowerCase(); //Formata o texto em minusculo
@@ -114,7 +116,7 @@ function validation (){
     var value = document.getElementById("value").value;
 
     document.getElementById("errors").style.display = "none";
-    
+
     var errors = ""
     if(desc === ""){
         errors += '<p>Digite uma Descrição</p>'
@@ -151,4 +153,3 @@ function validation (){
 }
 
 setList(list);
-console.log(getTotal(list))
